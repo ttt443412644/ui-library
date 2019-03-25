@@ -1,41 +1,39 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Menu from 'menu'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
-import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
+import ItemChoice, { ItemChoiceStatus } from '~/itemChoice'
+import { HomeIcon, NewspaperIcon, CheckShieldIcon } from '~/icon'
+import Menu, { MenuItemChoiceProps } from './index'
 
-let defaultProps = {}
+let items: MenuItemChoiceProps[]
 
 describe('Menu', () => {
   beforeEach(() => {
-    defaultProps = {
-      items: [
-        {
-          id: 'menu-item-1',
-          label: 'Dashboard',
-          leftAddon: <HomeIcon />,
-          href: '/',
-        },
-        {
-          id: 'menu-item-2',
-          label: 'Rides offered',
-          leftAddon: <NewspaperIcon />,
-          rightAddon: <CheckShieldIcon />,
-          href: '/rides',
-        },
-      ],
-    }
+    items = [
+      {
+        id: 'menu-item-1',
+        label: 'Dashboard',
+        leftAddon: <HomeIcon />,
+        href: '/',
+      },
+      {
+        id: 'menu-item-2',
+        label: 'Rides offered',
+        leftAddon: <NewspaperIcon />,
+        rightAddon: <CheckShieldIcon />,
+        href: '/rides',
+      },
+    ]
   })
 
   it('Should accept a custom className', () => {
     const customClassName = 'custom'
-    const wrapper = shallow(<Menu {...defaultProps} className={customClassName} />)
+    const wrapper = shallow(<Menu items={items} className={customClassName} />)
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
   it('Should render menu items', () => {
-    const wrapper = mount(<Menu {...defaultProps} />)
+    const wrapper = mount(<Menu items={items} />)
     expect(wrapper.find(ItemChoice)).toHaveLength(2)
     expect(
       wrapper
@@ -56,9 +54,9 @@ describe('Menu', () => {
   it('Should configure onClick listeners on nested menu items', () => {
     // Set up the second menu item with a mocked onClick handler.
     const onClickMock = jest.fn()
-    defaultProps.items[1].onClick = onClickMock
+    const itemsClick = items.map(item => ({ ...item, onClick: onClickMock }))
 
-    const wrapper = shallow(<Menu {...defaultProps} />)
+    const wrapper = shallow(<Menu items={itemsClick} />)
     wrapper
       .find(ItemChoice)
       .last()
@@ -67,9 +65,8 @@ describe('Menu', () => {
   })
 
   it('Should use configured status for nested items', () => {
-    defaultProps.items[0].status = ItemChoiceStatus.LOADING
-
-    const wrapper = shallow(<Menu {...defaultProps} />)
+    const itemsLoading = items.map(item => ({ ...item, status: ItemChoiceStatus.LOADING }))
+    const wrapper = shallow(<Menu items={itemsLoading} />)
     expect(
       wrapper
         .find(ItemChoice)

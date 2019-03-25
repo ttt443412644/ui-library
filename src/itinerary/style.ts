@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, componentSizes } from '_utils/branding'
+import { color, space, componentSizes } from '~/_utils/branding'
 
 const distanceFromHeight = '40px'
 

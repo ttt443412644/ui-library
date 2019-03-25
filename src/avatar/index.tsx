@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import Badge from 'badge'
-import CheckIcon from 'icon/checkIcon'
-import style from 'avatar/style'
+import { prefix } from '~/_utils/helpers'
+import { color } from '~/_utils/branding'
+import Badge from '~/badge'
+import CheckIcon from '~/icon/checkIcon'
+import style from './style'
 
 export interface AvatarInterface {
   readonly className?: Classcat.Class

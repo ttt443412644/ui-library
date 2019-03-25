@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
-import Menu from 'menu'
+import Menu from '~/menu'
 import {
   BankIcon,
   BellIcon,
@@ -12,9 +12,9 @@ import {
   NewspaperIcon,
   ProfileIcon,
   TicketIcon,
-} from 'icon'
-import Drawer from 'drawer'
-import HamburgerButton from 'hamburgerButton'
+} from '~/icon'
+import HamburgerButton from '~/hamburgerButton'
+import Drawer from './index'
 
 const stories = storiesOf('Drawer', module)
 stories.addDecorator(withKnobs)

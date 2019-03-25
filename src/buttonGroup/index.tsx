@@ -1,12 +1,12 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import style from 'buttonGroup/style'
-import { ButtonProps } from 'button'
+import { prefix } from '~/_utils/helpers'
+import { ButtonProps } from '~/button'
+import style from './style'
 
 export interface ButtonGroupProps {
-  readonly children: React.ReactElement<ButtonProps>[]
+  readonly children: React.ReactElement<ButtonProps>[] | React.ReactElement<ButtonProps>
   readonly className?: Classcat.Class
   readonly isInline?: boolean
   readonly isReverse?: boolean

@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Radio from 'radio'
-import ItemChoice from 'itemChoice'
+import ItemChoice from '~/itemChoice'
+import Radio from './index'
 
 const defaultProps = {
   name: 'radioName',
@@ -84,7 +84,6 @@ describe('Radio', () => {
       </Radio>,
     )
     wrapper.setProps({ status: Radio.STATUS.CHECKED })
-    expect(setTimeout.mock.calls.length).toBe(1)
     expect(setTimeout).toHaveBeenCalledTimes(1)
   })
 })

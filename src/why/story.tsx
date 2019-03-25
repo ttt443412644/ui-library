@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import Why from 'why'
+import Why from './index'
 
 const stories = storiesOf('Why', module)
 stories.addDecorator(withKnobs)

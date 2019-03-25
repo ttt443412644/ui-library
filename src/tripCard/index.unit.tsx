@@ -1,13 +1,14 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import TripCard from 'tripCard'
-import ComfortIcon from 'icon/comfortIcon'
-import LightningIcon from 'icon/lightningIcon'
-import LadyIcon from 'icon/ladyIcon'
+import ComfortIcon from '~/icon/comfortIcon'
+import LightningIcon from '~/icon/lightningIcon'
+import LadyIcon from '~/icon/ladyIcon'
+import TripCard from './index'
 
 const mockedProps = {
   href: '#',
+  metaUrl: '',
   itinerary: [
     {
       mainLabel: 'Paris',

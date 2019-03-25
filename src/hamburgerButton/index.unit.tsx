@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import HamburgerButton from 'hamburgerButton'
+import HamburgerButton from './index'
 
 const defaultProps = {
   onClick() {},

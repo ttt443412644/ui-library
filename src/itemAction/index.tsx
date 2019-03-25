@@ -1,5 +1,6 @@
 import React from 'react'
-import Item from '_utils/item'
+
+import Item from '~/_utils/item'
 
 export interface ItemActionProps {
   readonly tag?: JSX.Element

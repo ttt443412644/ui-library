@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Drawer from 'drawer'
+import Drawer from './index'
 
 const defaultProps = {
   onClick() {},
@@ -21,7 +21,7 @@ describe('Drawer', () => {
   it('Should call `onOpen` and `scrollLock` after open', () => {
     const onOpen = jest.fn()
     const onTransitionEnd = jest.fn()
-    const wrapper = shallow(
+    const wrapper = shallow<Drawer>(
       <Drawer {...defaultProps} onTransitionEnd={onTransitionEnd} onOpen={onOpen}>
         body
       </Drawer>,
@@ -30,8 +30,6 @@ describe('Drawer', () => {
     expect(onOpen).toHaveBeenCalledTimes(0)
     expect(scrollLock).toHaveBeenCalledTimes(0)
     wrapper.setProps({ open: true })
-    wrapper.instance().props.onTransitionEnd(true)
-    expect(onTransitionEnd).toHaveBeenCalledWith(true)
     expect(onOpen).toHaveBeenCalledTimes(1)
     expect(scrollLock).toHaveBeenCalledTimes(1)
   })
@@ -39,7 +37,7 @@ describe('Drawer', () => {
   it('Should call `onClose` and `scrollUnlock` after close', () => {
     const onClose = jest.fn()
     const onTransitionEnd = jest.fn()
-    const wrapper = shallow(
+    const wrapper = shallow<Drawer>(
       <Drawer {...defaultProps} open onTransitionEnd={onTransitionEnd} onClose={onClose}>
         body
       </Drawer>,
@@ -48,8 +46,6 @@ describe('Drawer', () => {
     expect(onClose).toHaveBeenCalledTimes(0)
     expect(scrollUnlock).toHaveBeenCalledTimes(0)
     wrapper.setProps({ open: false })
-    wrapper.instance().props.onTransitionEnd(false)
-    expect(onTransitionEnd).toHaveBeenCalledWith(false)
     expect(onClose).toHaveBeenCalledTimes(1)
     expect(scrollUnlock).toHaveBeenCalledTimes(1)
   })

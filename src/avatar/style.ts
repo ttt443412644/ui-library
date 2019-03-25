@@ -1,5 +1,6 @@
 import css from 'styled-jsx/css'
-import { color } from '_utils/branding'
+
+import { color } from '~/_utils/branding'
 
 export default css`
   .kirk-avatar {

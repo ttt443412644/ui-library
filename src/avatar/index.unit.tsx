@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Avatar from 'avatar'
-import Badge from 'badge'
+import Badge from '~/badge'
+import Avatar from './index'
 
 it('Should have the proper default state.', () => {
   const avatar = shallow(<Avatar image="//placehold.it/80x80" alt="my alternative txt" />)

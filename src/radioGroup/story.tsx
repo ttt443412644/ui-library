@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, select } from '@storybook/addon-knobs'
 
-import RadioGroup from 'radioGroup/index'
-import Radio from 'radio/index'
-import StarIcon from 'icon/starIcon'
+import RadioGroup from './index'
+import Radio from '~/radio'
+import StarIcon from '~/icon/starIcon'
 
 const stories = storiesOf('Radio', module)
 stories.addDecorator(withKnobs)

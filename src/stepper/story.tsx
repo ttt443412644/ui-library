@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, number } from '@storybook/addon-knobs'
 
-import Stepper from 'stepper'
+import Stepper from './index'
 
 const stories = storiesOf('Stepper', module)
 stories.addDecorator(withKnobs)

@@ -2,10 +2,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import { color } from '_utils/branding'
 
-import ItemAction from 'itemAction'
-import BubbleIcon from 'icon/bubbleIcon'
+import { color } from '~/_utils/branding'
+import ItemAction from '~/itemAction'
+import BubbleIcon from '~/icon/bubbleIcon'
 
 const stories = storiesOf('ItemAction', module)
 stories.addDecorator(withKnobs)

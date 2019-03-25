@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import Badge from 'badge'
+import Badge from '~/badge'
 
 const stories = storiesOf('Badge', module)
 stories.addDecorator(withKnobs)

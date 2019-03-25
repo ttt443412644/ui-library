@@ -1,8 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
-import Star from 'icon/starIcon'
 
-import style from 'stars/style'
+import Star from '~/icon/starIcon'
+import style from './style'
 
 interface Stars {
   readonly className?: Classcat.Class

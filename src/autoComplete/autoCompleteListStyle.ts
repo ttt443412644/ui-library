@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, radius, space } from '_utils/branding'
+import { color, font, radius, space } from '~/_utils/branding'
 
 export default css`
   .kirk-autoComplete-list {

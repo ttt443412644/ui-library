@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import SuccessModal, { SuccessModalProps } from 'successModal'
+import SuccessModal, { SuccessModalProps } from './index'
 
 const stories = storiesOf('SuccessModal', module)
 stories.addDecorator(withKnobs)

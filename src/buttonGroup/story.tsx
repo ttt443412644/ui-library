@@ -3,8 +3,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import ButtonGroup from 'buttonGroup'
-import Button from 'button'
+import Button from '~/button'
+import ButtonGroup from './index'
 
 const stories = storiesOf('ButtonGroup', module)
 stories.addDecorator(withKnobs)

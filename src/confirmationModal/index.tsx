@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { canUseDOM, canUseEventListeners } from 'exenv'
+import { canUseDOM, canUseEventListeners } from '~/_utils/environment'
 import cc from 'classcat'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import { createPortal } from 'react-dom'
 
-import CustomTransition, { AnimationType } from 'transitions'
-import { color } from '_utils/branding'
-import Button from 'button'
-import CrossIcon from 'icon/crossIcon'
-import WarningIcon from 'icon/warningIcon'
-import InfoIcon from 'icon/infoIcon'
+import CustomTransition, { AnimationType } from '~/transitions'
+import { color } from '~/_utils/branding'
+import Button from '~/button'
+import CrossIcon from '~/icon/crossIcon'
+import WarningIcon from '~/icon/warningIcon'
+import InfoIcon from '~/icon/infoIcon'
+import KEYCODES from '~/_utils/keycodes'
 import style from './style'
-import KEYCODES from '_utils/keycodes'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
@@ -19,6 +19,7 @@ export enum ConfirmationModalStatus {
 }
 
 export interface ConfirmationModalProps {
+  readonly onConfirm: () => void
   readonly onClose: () => void
   readonly status: ConfirmationModalStatus
   readonly isOpen?: boolean
@@ -26,7 +27,6 @@ export interface ConfirmationModalProps {
   readonly className?: Classcat.Class
   readonly closeOnEsc?: boolean
   readonly closeButtonTitle?: string
-  readonly onConfirm: () => void
   readonly confirmLabel?: string
   readonly large?: boolean
 }
@@ -87,7 +87,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
   }
 
   handleKeydown = (event: KeyboardEvent) => {
-    if (event.keyCode === KEYCODES.ESCAPE) {
+    if (event.code === KEYCODES.ESCAPE) {
       this.props.onClose()
     }
   }

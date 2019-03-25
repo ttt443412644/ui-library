@@ -1,13 +1,14 @@
-import React, { PureComponent } from 'react'
-import { canUseDOM } from 'exenv'
-import cc from 'classcat'
-import { CrossIcon } from 'icon'
-import { createPortal } from 'react-dom'
-import { color } from '_utils/branding'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
-import CustomTransition, { AnimationType } from 'transitions'
-import Button from 'button'
-import Text, { TextDisplayType } from 'text'
+import React, { PureComponent } from 'react'
+import { createPortal } from 'react-dom'
+import cc from 'classcat'
+
+import { canUseDOM } from '~/_utils/environment'
+import { color } from '~/_utils/branding'
+import CrossIcon from '~/icon/crossIcon'
+import CustomTransition, { AnimationType } from '~/transitions'
+import Button from '~/button'
+import Text, { TextDisplayType } from '~/text'
 
 import style from './style'
 
@@ -19,6 +20,7 @@ export interface SnackbarProps {
 
 class Snackbar extends PureComponent<SnackbarProps> {
   private portalNode: HTMLElement
+
   static defaultProps: Partial<SnackbarProps> = {
     isOpen: false,
   }

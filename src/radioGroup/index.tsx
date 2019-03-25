@@ -1,9 +1,9 @@
 import React, { PureComponent, cloneElement } from 'react'
 import cc from 'classcat'
 
-import style from 'radioGroup/style'
-import Radio, { RadioProps } from 'radio'
-import { ItemChoiceStatus } from 'itemChoice'
+import Radio, { RadioProps } from '~/radio'
+import { ItemChoiceStatus } from '~/itemChoice'
+import style from './style'
 
 export interface RadioGroupProps {
   readonly name: string

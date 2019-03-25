@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import SelectField from 'selectField'
+import SelectField from './index'
 
 const options = [
   { value: '1', label: 'val 1', ariaLabel: 'value 1' },
@@ -59,7 +59,7 @@ describe('SelectField', () => {
 
   it('should receive selected value after change', () => {
     const select = defaultWrapper.find('select')
-    const selectDOMNode = select.getDOMNode()
+    const selectDOMNode = select.getDOMNode() as HTMLSelectElement
     selectDOMNode.value = '2'
     select.simulate('change', { target: selectDOMNode })
     expect(handleOnChange).toHaveBeenCalledWith({ name: 'selectFieldName', value: '2' })

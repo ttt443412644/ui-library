@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { replaceNewLineWithBR } from '_utils'
+import { replaceNewLineWithBR } from '~/_utils/helpers'
 import style from './style'
 
 export enum TextDisplayType {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { ItemChoiceStatus } from 'itemChoice'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
-import AutoComplete from 'autoComplete'
+import { ItemChoiceStatus } from '~/itemChoice'
+import AutoComplete from './index'
 
 const stories = storiesOf('AutoComplete', module)
 stories.addDecorator(withKnobs)

@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Button, { eventHandler } from 'button'
-import CrossIcon from 'icon/crossIcon'
+import CrossIcon from '~/icon/crossIcon'
+import Button from './index'
 
 jest.useFakeTimers()
 
@@ -75,22 +75,6 @@ describe('Button', () => {
     const wrapper = shallow(<Button onFocus={onButtonFocus}>blabla</Button>)
     wrapper.find('button').simulate('focus')
     expect(onButtonFocus).toHaveBeenCalledTimes(1)
-  })
-
-  it('Does not fire events in eventhandler', () => {
-    const firstEvent = jest.fn()
-    const secondEvent = jest.fn()
-    eventHandler(firstEvent, secondEvent)
-    expect(firstEvent).not.toHaveBeenCalled()
-    expect(secondEvent).not.toHaveBeenCalled()
-  })
-
-  it('Fires both events in eventhandler', () => {
-    const firstEvent = jest.fn()
-    const secondEvent = jest.fn()
-    eventHandler(firstEvent, secondEvent)()
-    expect(firstEvent).toHaveBeenCalledTimes(1)
-    expect(secondEvent).toHaveBeenCalledTimes(1)
   })
 
   it('fires the callback event when valid', () => {

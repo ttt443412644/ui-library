@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Stepper from 'stepper'
-import MinusIcon from 'icon/minusIcon'
-import PlusIcon from 'icon/plusIcon'
+import MinusIcon from '~/icon/minusIcon'
+import PlusIcon from '~/icon/plusIcon'
+import Stepper from './index'
 
 const defaultProps = {
   name: 'testName',

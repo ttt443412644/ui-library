@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, space } from '_utils/branding'
+import { color, font, space } from '~/_utils/branding'
 
 const separatorHeight = '16px'
 const intValue = (value: string) => parseInt(value, 10)

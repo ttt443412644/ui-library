@@ -1,16 +1,16 @@
 import React, { Component, Ref } from 'react'
 
-import Modal from 'modal'
-import Button from 'button'
-import Text, { TextTagType, TextDisplayType } from 'text'
-import { color } from '_utils/branding'
+import Modal from '~/modal'
+import Button from '~/button'
+import Text, { TextTagType, TextDisplayType } from '~/text'
+import { color } from '~/_utils/branding'
 import style from './style'
 
 export interface SuccessModalProps {
+  readonly onConfirm: () => void
   readonly isOpen?: boolean
   readonly children?: string | number | React.ReactNode
   readonly closeOnEsc?: boolean
-  readonly onConfirm: () => void
   readonly confirmLabel?: string
   readonly imageSrc: string
   readonly imageText?: string

@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import Checkbox, { labelDisplays } from 'checkbox'
-import Loader from 'loader'
+import Loader from '~/loader'
+import Checkbox, { labelDisplays } from './index'
 
 describe('Checkbox', () => {
   jest.useFakeTimers()
@@ -57,7 +57,7 @@ describe('Checkbox', () => {
 
   it('should trigger a change event on a normal checkbox', () => {
     const onCheckboxClick = jest.fn()
-    const checkbox = shallow(
+    const checkbox = shallow<Checkbox>(
       <Checkbox onChange={onCheckboxClick} name="checkbox1" value="value">
         Label
       </Checkbox>,
@@ -73,7 +73,7 @@ describe('Checkbox', () => {
     function callback() {
       expect(onCheckboxClick).toHaveBeenCalledTimes(1)
     }
-    const checkbox = shallow(
+    const checkbox = shallow<Checkbox>(
       <Checkbox
         onChange={() => {
           setTimeout(() => {
@@ -82,7 +82,6 @@ describe('Checkbox', () => {
         }}
         name="checkbox1"
         value="value"
-        asynchronous
       >
         Label
       </Checkbox>,
@@ -93,7 +92,7 @@ describe('Checkbox', () => {
   it('should display the label on the left and the checkbox on the right', () => {
     const checkbox = renderer
       .create(
-        <Checkbox labelDisplay={labelDisplays.LEFT} labelFirstname="checkbox1" value="value">
+        <Checkbox labelDisplay={labelDisplays.LEFT} value="value">
           Label
         </Checkbox>,
       )
@@ -104,7 +103,7 @@ describe('Checkbox', () => {
   it('should not display either the label or the sublabel', () => {
     const checkbox = renderer
       .create(
-        <Checkbox labelDisplay={labelDisplays.NONE} labelFirstname="checkbox1" value="value">
+        <Checkbox labelDisplay={labelDisplays.NONE} value="value">
           Label
         </Checkbox>,
       )

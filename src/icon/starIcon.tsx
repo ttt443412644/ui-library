@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import { color } from '_utils/branding'
+import { color } from '~/_utils/branding'
 
 interface StarProps extends Icon {
   readonly bgColor?: string

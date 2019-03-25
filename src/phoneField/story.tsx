@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import PhoneField from 'phoneField'
+import PhoneField from './index'
 
 const stories = storiesOf('PhoneField', module)
 stories.addDecorator(withKnobs)

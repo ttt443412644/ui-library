@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import HamburgerButton from 'hamburgerButton'
+import HamburgerButton from './index'
 
 const stories = storiesOf('HamburgerButton', module)
 stories.addDecorator(withKnobs)

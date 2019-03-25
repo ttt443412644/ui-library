@@ -1,8 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
-import ItemChoice, { ItemChoiceProps } from 'itemChoice'
 
-interface MenuItemChoiceProps extends ItemChoiceProps {
+import ItemChoice, { ItemChoiceProps } from '~/itemChoice'
+
+export interface MenuItemChoiceProps extends ItemChoiceProps {
   id?: string | number
 }
 

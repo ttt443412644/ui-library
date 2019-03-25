@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ItemAction from 'itemAction'
-import CrossIcon from 'icon/crossIcon'
+import ItemAction from '~/itemAction'
+import CrossIcon from '~/icon/crossIcon'
 
 jest.useFakeTimers()
 
@@ -46,8 +46,8 @@ describe('ItemAction', () => {
   })
 
   it('Should forward the tag to item', () => {
-    const wrapper = shallow(<ItemAction tag="li" {...defaultProps} />)
+    const wrapper = shallow(<ItemAction tag={<li />} {...defaultProps} />)
 
-    expect(wrapper.prop('tag')).toEqual('li')
+    expect(wrapper.prop('tag')).toEqual(<li />)
   })
 })

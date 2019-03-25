@@ -11,11 +11,14 @@
     "moduleResolution": "node",
     "target": "es6",
     "lib": ["es2017", "dom"],
-    "jsx": "preserve",
+    "jsx": "react",
     "allowJs": true,
     "noEmitOnError": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src"
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "include": ["node_modules/@types", "src/**/*.tsx", "src/**/*.ts", "stories/index.tsx"],
   "exclude": ["build", "node_modules", "src/**/*.unit.tsx"]

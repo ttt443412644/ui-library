@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
+
 import {
   BankIcon,
   BellIcon,
@@ -14,11 +14,10 @@ import {
   NewspaperIcon,
   ProfileIcon,
   TicketIcon,
-} from 'icon'
-import Text from 'text'
-
-import Menu from 'menu'
-import { ItemChoiceStatus } from 'itemChoice'
+} from '~/icon'
+import Text from '~/text'
+import { ItemChoiceStatus } from '~/itemChoice'
+import Menu from './index'
 
 const stories = storiesOf('Menu', module)
 stories.addDecorator(withKnobs)

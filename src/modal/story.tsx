@@ -3,7 +3,7 @@ import React, { Component, createRef } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
-import Modal, { ModalProps } from 'modal'
+import Modal, { ModalProps } from './index'
 
 const stories = storiesOf('Modal', module)
 stories.addDecorator(withKnobs)

@@ -2,28 +2,28 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import Itinerary from 'itinerary'
-import Proximity from 'proximity'
+import Proximity, { Distances } from '~/proximity'
+import Itinerary from './index'
 
 const places = [
   {
     distanceFromPoint: '1,5km',
     time: '09:00',
     isoDate: '2017-12-11T09:00',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />,
     mainLabel: 'Paris',
   },
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />,
     mainLabel: 'Tours',
   },
   {
     distanceFromPoint: '8km',
     time: '15:00',
     isoDate: '2017-12-11T15:00',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />,
     mainLabel: 'Bordeaux',
   },
 ]
@@ -70,7 +70,9 @@ describe('Itinerary component', () => {
             distanceFromPoint: '1,5km',
             time: '09:00',
             isoDate: '2017-12-11T09:00',
-            subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+            subLabel: (
+              <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+            ),
             mainLabel: 'Paris',
             href: '#test',
           },
@@ -78,7 +80,9 @@ describe('Itinerary component', () => {
             distanceFromPoint: '8km',
             time: '15:00',
             isoDate: '2017-12-11T15:00',
-            subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+            subLabel: (
+              <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+            ),
             mainLabel: 'Bordeaux',
           },
         ]}
@@ -101,7 +105,9 @@ describe('Itinerary component', () => {
             distanceFromPoint: '1,5km',
             time: '09:00',
             isoDate: '2017-12-11T09:00',
-            subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+            subLabel: (
+              <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+            ),
             mainLabel: 'Paris',
             href: <button type="button" />,
           },
@@ -109,7 +115,9 @@ describe('Itinerary component', () => {
             distanceFromPoint: '8km',
             time: '15:00',
             isoDate: '2017-12-11T15:00',
-            subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+            subLabel: (
+              <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+            ),
             mainLabel: 'Bordeaux',
           },
         ]}
@@ -147,7 +155,9 @@ describe('Itinerary component', () => {
       {
         time: '12:00',
         isoDate: '2017-12-11T12:00',
-        subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+        subLabel: (
+          <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+        ),
         mainLabel: 'Tours',
       },
     ]
@@ -186,7 +196,9 @@ describe('Itinerary component', () => {
       {
         time: '12:00',
         isoDate: '2017-12-11T12:00',
-        subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+        subLabel: (
+          <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />
+        ),
         mainLabel: 'Tours',
         key: 'route-end-tours',
       },

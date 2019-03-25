@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import { canUseDOM } from 'exenv'
+import { canUseDOM } from '~/_utils/environment'
 import cc from 'classcat'
 
-import style from 'drawer/style'
-import KEYCODES from '_utils/keycodes'
+import KEYCODES from '~/_utils/keycodes'
+import style from './style'
 
 export interface DrawerProps {
   readonly children: string | JSX.Element
@@ -63,7 +63,7 @@ export default class Drawer extends PureComponent<DrawerProps> {
   }
 
   handleKeydown = (e: KeyboardEvent) => {
-    if (e.keyCode === KEYCODES.ESCAPE) {
+    if (e.code === KEYCODES.ESCAPE) {
       this.close()
     }
   }

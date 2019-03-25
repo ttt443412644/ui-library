@@ -4,22 +4,21 @@ import { shallow, mount } from 'enzyme'
 import AutoCompleteList from './autoCompleteList'
 import AutoCompleteListItem from './autoCompleteListItem'
 
+import KEYCODES from '~/_utils/keycodes'
+
 const fakeItems = [
-  { title: 'title1', description: 'description1' },
-  { title: 'title2', description: 'description2' },
+  { id: 'one', title: 'title1', description: 'description1' },
+  { id: 'two', title: 'title2', description: 'description2' },
 ]
 
 const defaultProps = {
   name: 'cities',
   items: fakeItems,
-  renderItem: ({ item }) => <div>{item.title}</div>,
+  renderItem: ({ item }: AutocompleteItemToRender) => <div>{item.title}</div>,
   visible: true,
 }
 
-const fakeKeyboardEvent = (key, keyCode) => ({ key, keyCode, preventDefault: () => {} })
-const fakeKeyboardEventArrowDown = () => fakeKeyboardEvent('ArrowDown', 40)
-const fakeKeyboardEventArrowUp = () => fakeKeyboardEvent('ArrowUp', 38)
-const fakeKeyboardEventArrowEnter = () => fakeKeyboardEvent('Enter', 13)
+const fakeKeyboardEvent = (code: string) => new KeyboardEvent('keydown', { code })
 
 jest.useFakeTimers()
 
@@ -59,35 +58,37 @@ describe('AutoCompleteList', () => {
 
   describe('Keyboard navigation', () => {
     it('Can navigate with `down` arrow key', () => {
-      const wrapper = shallow(<AutoCompleteList {...defaultProps} />)
+      const wrapper = shallow<AutoCompleteList>(<AutoCompleteList {...defaultProps} />)
 
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_DOWN))
       expect(wrapper.state('highlightedIndex')).toBe(0)
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_DOWN))
       expect(wrapper.state('highlightedIndex')).toBe(1)
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_DOWN))
       expect(wrapper.state('highlightedIndex')).toBe(0)
     })
 
     it('Can navigate with `up` arrow key', () => {
-      const wrapper = shallow(<AutoCompleteList {...defaultProps} />)
+      const wrapper = shallow<AutoCompleteList>(<AutoCompleteList {...defaultProps} />)
 
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowUp())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_UP))
       expect(wrapper.state('highlightedIndex')).toBe(1)
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowUp())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_UP))
       expect(wrapper.state('highlightedIndex')).toBe(0)
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowUp())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_UP))
       expect(wrapper.state('highlightedIndex')).toBe(1)
     })
 
     it('Can select an item with `enter` key', () => {
       const onSelectSpy = jest.fn()
-      const wrapper = shallow(<AutoCompleteList {...defaultProps} onSelect={onSelectSpy} />)
+      const wrapper = shallow<AutoCompleteList>(
+        <AutoCompleteList {...defaultProps} onSelect={onSelectSpy} />,
+      )
 
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ENTER))
       expect(onSelectSpy).not.toHaveBeenCalled()
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_DOWN))
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ENTER))
       expect(onSelectSpy).toHaveBeenCalledWith(fakeItems[0])
     })
   })
@@ -95,7 +96,7 @@ describe('AutoCompleteList', () => {
   describe('#selectedItemStatus', () => {
     it('displays an AutoCompleteListItem in loading state', () => {
       const onSelectSpy = jest.fn()
-      const wrapper = shallow(
+      const wrapper = shallow<AutoCompleteList>(
         <AutoCompleteList
           {...defaultProps}
           onSelect={onSelectSpy}
@@ -103,8 +104,8 @@ describe('AutoCompleteList', () => {
         />,
       )
 
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
-      wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ARROW_DOWN))
+      wrapper.instance().handleKeydown(fakeKeyboardEvent(KEYCODES.ENTER))
 
       expect(wrapper.state().selectedIndex).toBe(0)
     })

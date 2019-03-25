@@ -1,17 +1,17 @@
 import React from 'react'
 import cc from 'classcat'
 
-import style from 'rating/style'
-import Stars from 'stars'
+import Stars from '~/stars'
+import style from './style'
 
 interface Rating {
-  className?: Classcat.Class
   score: number
   ratings: number
   children: string
+  className?: Classcat.Class
 }
 
-const Rating = ({ className = '', score = 0, ratings = 0, children = '' }: Rating): JSX.Element => (
+const Rating = ({ score, ratings, children, className = '' }: Rating): JSX.Element => (
   <div className={cc(['kirk-rating', className])}>
     <Stars stars={score} />
     <span>

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Item from '_utils/item'
-import { TextDisplayType } from 'text'
+import { TextDisplayType } from '~/text'
+import Item from '~/_utils/item'
 
 interface ItemDataProps {
   readonly data: string

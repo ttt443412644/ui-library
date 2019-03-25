@@ -1,7 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
-import { color } from '_utils/branding'
-import ProximityIcon from 'icon/proximityIcon'
+
+import { color } from '~/_utils/branding'
+import ProximityIcon from '~/icon/proximityIcon'
 import style from './style'
 
 export enum Distances {

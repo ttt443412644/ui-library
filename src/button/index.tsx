@@ -2,9 +2,9 @@ import React, { PureComponent, Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
-import style from 'button/style'
-import Loader from 'loader'
+import Loader from '~/loader'
+import { prefix } from '~/_utils/helpers'
+import style from './style'
 
 export enum ButtonStatus {
   PRIMARY = 'primary',
@@ -66,7 +66,7 @@ type TypeProps = {
   disabled?: boolean
 }
 
-export const eventHandler = (componentEvent: functionEvent, childEvent: functionEvent) => (
+const eventHandler = (componentEvent: functionEvent, childEvent: functionEvent) => (
   event: ButtonActionEvents,
 ) => {
   componentEvent && componentEvent(event)

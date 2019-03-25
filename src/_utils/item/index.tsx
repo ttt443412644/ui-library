@@ -2,8 +2,8 @@ import React from 'react'
 import cc from 'classcat'
 
 import style from './style'
-import Text, { TextTagType, TextDisplayType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
+import Text, { TextTagType, TextDisplayType } from '~/text'
+import ChevronIcon from '~/icon/chevronIcon'
 
 export interface ItemProps {
   readonly chevron?: boolean

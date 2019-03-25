@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
-import { ItemChoiceStatus } from 'itemChoice'
+import { canUseEventListeners } from '~/_utils/environment'
+import { prefix } from '~/_utils/helpers'
+import KEYCODES from '~/_utils/keycodes'
+import { ItemChoiceStatus } from '~/itemChoice'
 import AutoCompleteListItem from './autoCompleteListItem'
 import style from './autoCompleteListStyle'
 
@@ -106,11 +107,11 @@ export default class AutoCompleteList extends Component<
   }
 
   handleKeydown = (e: KeyboardEvent) => {
-    if (e.keyCode === 13) {
+    if (e.code === KEYCODES.ENTER) {
       this.onKeyboardEventEnter(e)
-    } else if (e.keyCode === 38) {
+    } else if (e.code === KEYCODES.ARROW_UP) {
       this.onKeyboardEventArrowUp(e)
-    } else if (e.keyCode === 40) {
+    } else if (e.code === KEYCODES.ARROW_DOWN) {
       this.onKeyboardEventArrowDown(e)
     }
   }

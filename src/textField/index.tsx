@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react'
+import isEmpty from 'lodash.isempty'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import style from 'textField/style'
-import Button from 'button'
-import CrossIcon from 'icon/crossIcon'
-import EyeIcon from 'icon/eyeIcon'
-import isEmpty from 'lodash.isempty'
+import { prefix } from '~/_utils/helpers'
+import { color } from '~/_utils/branding'
+import Button from '~/button'
+import CrossIcon from '~/icon/crossIcon'
+import EyeIcon from '~/icon/eyeIcon'
+import style from './style'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 

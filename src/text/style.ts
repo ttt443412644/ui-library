@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, fontWeight } from '_utils/branding'
+import { color, font, fontWeight } from '~/_utils/branding'
 
 export default css`
   :global(.kirk-text) {

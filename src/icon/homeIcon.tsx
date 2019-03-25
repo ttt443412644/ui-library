@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import Badge from 'badge'
-import style from 'icon/style'
-import { color } from '_utils/branding'
+import Badge from '~/badge'
+import { color } from '~/_utils/branding'
+import style from './style'
 
 class HomeIcon extends PureComponent<Icon> {
   static defaultProps: Icon = {

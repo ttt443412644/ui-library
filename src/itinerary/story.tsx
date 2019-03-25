@@ -3,8 +3,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
-import Itinerary from 'itinerary'
-import Proximity from 'proximity'
+import Proximity from '~/proximity'
+import Itinerary from './index'
 
 const stories = storiesOf('Itinerary', module)
 stories.addDecorator(withKnobs)

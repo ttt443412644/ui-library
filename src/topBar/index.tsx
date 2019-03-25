@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
-import style from 'topBar/style'
+import style from './style'
 
 interface TopBarProps {
   readonly className?: Classcat.Class

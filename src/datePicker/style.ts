@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css'
 
-import { space, font, color } from '_utils/branding'
+import { space, font, color } from '~/_utils/branding'
 
 const horizontalMonthsGutter = parseInt(space.xl, 10)
 

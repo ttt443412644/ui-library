@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Avatar from 'avatar'
-import Rating from 'rating'
-import Text, { TextDisplayType } from 'text'
-import Item from '_utils/item'
+import Avatar from '~/avatar'
+import Rating from '~/rating'
+import Text, { TextDisplayType } from '~/text'
+import Item from '~/_utils/item'
 
 interface ProfileProps {
   readonly className?: Classcat.Class
@@ -33,9 +33,9 @@ const Profile = ({
   isIdChecked,
   isMedium,
   isLink,
-  score,
+  score = 0,
   ratings,
-  ratingsLabel,
+  ratingsLabel = '',
   href,
   onClick,
   onBlur,

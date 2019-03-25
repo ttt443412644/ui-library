@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
-import style, { animationDuration, animationDelay } from 'pushInfo/style'
+import style, { animationDuration, animationDelay } from './style'
 
 interface PushInfoProps {
   readonly className?: Classcat.Class

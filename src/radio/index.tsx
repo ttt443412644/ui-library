@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
-import style from 'radio/style'
+import { prefix } from '~/_utils/helpers'
+import ItemChoice, { ItemChoiceStatus } from '~/itemChoice'
+import style from './style'
 
 export interface RadioProps {
   readonly value: string

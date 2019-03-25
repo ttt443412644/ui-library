@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import { color, transition } from '_utils/branding'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
+import { prefix } from '~/_utils/helpers'
+import { color, transition } from '~/_utils/branding'
+import CircleIcon from '~/icon/circleIcon'
+import CheckIcon from '~/icon/checkIcon'
 import style from './style'
 
 interface LoaderProps {

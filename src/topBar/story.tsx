@@ -2,11 +2,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
-import { color } from '_utils/branding'
+import { color } from '~/_utils/branding'
 
-import TopBar from 'topBar'
-import Button from 'button'
-import ArrowIcon from 'icon/arrowIcon'
+import ArrowIcon from '~/icon/arrowIcon'
+import Button from '~/button'
+import TopBar from './index'
 
 const stories = storiesOf('TopBar', module)
 stories.addDecorator(withKnobs)

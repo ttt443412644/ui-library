@@ -2,8 +2,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
-import { color } from '_utils/branding'
-import * as icons from 'icon/index'
+import { color } from '~/_utils/branding'
+import * as icons from '~/icon/index'
 
 /** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {

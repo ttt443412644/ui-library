@@ -1,8 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 import style from './style'
-import { ChevronIcon } from 'icon'
-import { color } from '_utils/branding'
+
+import ChevronIcon from '~/icon/chevronIcon'
+import { color } from '~/_utils/branding'
 
 export interface DropdownButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void

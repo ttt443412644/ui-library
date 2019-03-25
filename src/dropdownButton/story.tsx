@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import DropdownButton from 'dropdownButton'
-import Avatar from 'avatar'
+import Avatar from '~/avatar'
+import DropdownButton from './index'
 
 const stories = storiesOf('DropdownButton', module)
 stories.addDecorator(withKnobs)

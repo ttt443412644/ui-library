@@ -1,11 +1,11 @@
 import fs from 'fs'
 
-import * as kirk from './index'
-import * as icon from './icon/index'
+import * as kirk from '~/index'
+import * as icon from '~/icon'
 
-const lowercase = string => string.charAt(0).toLowerCase() + string.slice(1)
+const lowercase = (string: string) => string.charAt(0).toLowerCase() + string.slice(1)
 
-const getComponentDirectories = srcpath =>
+const getComponentDirectories = (srcpath: string) =>
   fs
     .readdirSync(srcpath)
     .filter(
@@ -19,16 +19,18 @@ const getComponentDirectories = srcpath =>
 const components = Object.keys(kirk).map(lowercase)
 const icons = Object.keys(icon).map(lowercase)
 
-it('Should render the kirk library', () => {
-  expect(components.length).toBeGreaterThan(0)
-})
+describe('UI Library entry point', () => {
+  it('Should render the kirk library', () => {
+    expect(components.length).toBeGreaterThan(0)
+  })
 
-it('Should import every component folder', () => {
-  expect(components).toEqual([
-    ...getComponentDirectories('src'),
-    'branding',
-    'flush',
-    'flushToHTML',
-    ...icons,
-  ])
+  it('Should import every component folder', () => {
+    expect(components).toEqual([
+      'flush',
+      'flushToHTML',
+      ...getComponentDirectories('src'),
+      'branding',
+      ...icons,
+    ])
+  })
 })

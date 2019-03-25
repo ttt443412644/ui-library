@@ -1,10 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import style from 'message/style'
-
-import Caption from 'caption'
+import Caption from '~/caption'
+import { prefix } from '~/_utils/helpers'
+import style from './style'
 
 interface MessageProps {
   readonly children: string

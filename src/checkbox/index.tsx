@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
-import Loader from 'loader'
 
-import style from 'checkbox/style'
+import Loader from '~/loader'
+import style from './style'
 
 export interface CheckboxProps {
   readonly name: string

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { canUseDOM } from 'exenv'
+import { canUseDOM } from '~/_utils/environment'
 
 export const prefix = (
   modifiers: Classcat.ClassObject = {},
@@ -23,5 +23,3 @@ export const replaceNewLineWithBR = (str: string): React.ReactNode =>
         {curr}
       </Fragment>
     ))
-
-export default prefix

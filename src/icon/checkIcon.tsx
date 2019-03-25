@@ -3,7 +3,7 @@ import cc from 'classcat'
 import css from 'styled-jsx/css'
 import isEmpty from 'lodash.isempty'
 
-import { color } from '_utils/branding'
+import { color } from '~/_utils/branding'
 
 interface CheckProps extends Icon {
   readonly absolute?: boolean

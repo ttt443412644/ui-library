@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import cc from 'classcat'
+
+import ItemChoice, { ItemChoiceStatus } from '~/itemChoice'
 
 export interface AutoCompleteListItemProps {
   readonly item: AutocompleteItem

@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import TextField from 'textField'
-import Button from 'button'
-import EyeIcon from 'icon/eyeIcon'
+import Button from '~/button'
+import EyeIcon from '~/icon/eyeIcon'
+import TextField from './index'
 
 it('Should have the proper value.', () => {
   const wrapper = shallow(<TextField name="test" defaultValue="blabla" />)
@@ -140,12 +140,6 @@ describe('#error', () => {
     expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
     expect(wrapper.find('input').prop('aria-invalid')).toBe('true')
     expect(wrapper.find('span').text()).toBe(errorText)
-  })
-
-  it('Should not have an error state when passing a boolean `false`', () => {
-    const wrapper = shallow(<TextField name="test" error={false} />)
-    expect(wrapper.hasClass('kirk-error')).toBe(false)
-    expect(wrapper.find('.kirk-error-message')).toHaveLength(0)
   })
 })
 

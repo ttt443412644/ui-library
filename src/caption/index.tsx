@@ -1,8 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Button from 'button'
-import style from 'caption/style'
+import Button from '~/button'
+import style from './style'
 
 export const renderSecondary = (href?: string, secondaryText?: string) =>
   href ? (
@@ -23,7 +23,7 @@ interface Caption {
 
 const Caption = ({ className, children, href, secondaryText, isoDate }: Caption) => (
   <div className={cc(['kirk-caption', className])}>
-    <time dateTime={isoDate || null}>{children}</time>
+    <time dateTime={isoDate}>{children}</time>
     {secondaryText && <span> - {renderSecondary(href, secondaryText)}</span>}
     <style jsx>{style}</style>
   </div>

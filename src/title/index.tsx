@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
-import style from 'title/style'
+
+import style from './style'
 
 interface TitleProps {
   readonly className?: Classcat.Class

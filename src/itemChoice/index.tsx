@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import ChevronIcon from 'icon/chevronIcon'
-import CheckIcon from 'icon/checkIcon'
-import Loader from 'loader'
+import { prefix } from '~/_utils/helpers'
+import { color } from '~/_utils/branding'
+import ChevronIcon from '~/icon/chevronIcon'
+import CheckIcon from '~/icon/checkIcon'
+import Loader from '~/loader'
 import style from './style'
 
 export enum ItemChoiceStatus {

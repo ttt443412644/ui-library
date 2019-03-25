@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
-import ToggleButton from 'toggleButton'
+import ToggleButton from './index'
 
 const stories = storiesOf('ToggleButton', module)
 stories.addDecorator(withKnobs)

@@ -1,6 +1,11 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Caption, { renderSecondary } from 'caption'
+
+import Caption, { renderSecondary } from './index'
+
+const defaultProps = {
+  isoDate: 'iso',
+}
 
 it('Should have the proper text & attributes with link', () => {
   const caption = mount(
@@ -20,11 +25,6 @@ it('Should have the proper text & attributes with link', () => {
   expect(caption.find('a').prop('href')).toBe('https://blablacar.com')
 })
 
-it('Should not have a datetime attribute', () => {
-  const caption = shallow(<Caption>08th August 2017</Caption>)
-  expect(caption.find('time').prop('dateTime')).toBeNull()
-})
-
 it('Should have the proper text & attributes without a link', () => {
   const caption = shallow(
     <Caption secondaryText="Go to blablacar" isoDate="2017-08-07T14:10:40.526Z">
@@ -35,7 +35,7 @@ it('Should have the proper text & attributes without a link', () => {
 })
 
 it('Should not render the secondary element', () => {
-  const caption = shallow(<Caption>08th August 2017</Caption>)
+  const caption = shallow(<Caption {...defaultProps}>08th August 2017</Caption>)
   expect(caption.find('span')).toHaveLength(0)
 })
 

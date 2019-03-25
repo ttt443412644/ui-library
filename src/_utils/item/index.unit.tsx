@@ -2,21 +2,9 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
+import ClockIcon from '~/icon/clockIcon'
+import ChevronIcon from '~/icon/chevronIcon'
 import Item from './index'
-import ClockIcon from 'icon/clockIcon'
-import ChevronIcon from 'icon/chevronIcon'
-
-jest.mock('styled-jsx/style', () => {
-  const JSXStyle = ({ styleId, css }) => {
-    return <style id={styleId} />
-  }
-
-  JSXStyle.dynamic = () => {
-    return 'dynamic'
-  }
-
-  return JSXStyle
-})
 
 describe('Item', () => {
   it('Should not have changed', () => {

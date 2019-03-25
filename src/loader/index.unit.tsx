@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Loader from 'loader'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
+import CircleIcon from '~/icon/circleIcon'
+import CheckIcon from '~/icon/checkIcon'
+import Loader from './index'
 
 jest.useFakeTimers()
 

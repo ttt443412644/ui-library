@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
-import prefix from '_utils'
+import countryTelData from 'country-telephone-data'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
-import SelectField from 'selectField'
-import TextField from 'textField'
-import countryTelData from 'country-telephone-data'
-import style from 'phoneField/style'
+
+import { prefix } from '~/_utils/helpers'
+import SelectField from '~/selectField'
+import TextField from '~/textField'
+import style from './style'
 
 enum FIELDS {
   PHONENUMBER = 'phoneNumber',

@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 
-import TripCard from 'tripCard'
+import TripCard from './index'
 
 const stories = storiesOf('TripCard', module)
 stories.addDecorator(withKnobs)

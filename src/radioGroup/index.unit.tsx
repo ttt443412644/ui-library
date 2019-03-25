@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import RadioGroup from 'radioGroup'
-import Radio from 'radio'
-import Loader from 'loader'
+import Radio from '~/radio'
+import Loader from '~/loader'
+import RadioGroup from './index'
 
 jest.useFakeTimers()
 

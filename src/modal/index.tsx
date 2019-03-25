@@ -1,15 +1,15 @@
 import React, { Component, forwardRef, Ref } from 'react'
-import { canUseDOM, canUseEventListeners } from 'exenv'
+import { canUseDOM, canUseEventListeners } from '~/_utils/environment'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import cc from 'classcat'
 
-import CustomTransition, { AnimationType } from 'transitions'
-import { color } from '_utils/branding'
-import Button from 'button'
-import CrossIcon from 'icon/crossIcon'
+import CustomTransition, { AnimationType } from '~/transitions'
+import { color } from '~/_utils/branding'
+import Button from '~/button'
+import CrossIcon from '~/icon/crossIcon'
 import style from './style'
-import KEYCODES from '_utils/keycodes'
+import KEYCODES from '~/_utils/keycodes'
 
 export interface ModalProps {
   readonly close: () => void
@@ -113,7 +113,7 @@ class Modal extends Component<ModalProps> {
   }
 
   handleKeydown = (event: KeyboardEvent) => {
-    if (event.keyCode === KEYCODES.ESCAPE) {
+    if (event.code === KEYCODES.ESCAPE) {
       this.props.close()
     }
   }

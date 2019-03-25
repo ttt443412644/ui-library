@@ -1,6 +1,7 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import TimePicker, { getTodayDate } from 'timePicker'
+import { shallow } from 'enzyme'
+
+import TimePicker, { getTodayDate } from './index'
 
 const defaultProps = {
   name: 'departure-time',
@@ -115,7 +116,7 @@ describe('<TimePicker />', () => {
       expect(today.getMilliseconds()).toEqual(0)
     })
     it('should have `referenceDate` with time at 00:00:00', () => {
-      const wrapper = shallow(<TimePicker {...defaultProps} />)
+      const wrapper = shallow<TimePicker>(<TimePicker {...defaultProps} />)
       const referenceDate = wrapper.instance().referenceDate
       expect(referenceDate.getHours()).toEqual(0)
       expect(referenceDate.getMinutes()).toEqual(0)

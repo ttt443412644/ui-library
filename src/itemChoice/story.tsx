@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
-import ItemChoice from 'itemChoice'
-import StarIcon from 'icon/starIcon'
+import ItemChoice from '~/itemChoice'
+import StarIcon from '~/icon/starIcon'
 
 const stories = storiesOf('ItemChoice', module)
 stories.addDecorator(withKnobs)

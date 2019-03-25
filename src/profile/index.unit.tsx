@@ -1,15 +1,11 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
-import Profile from 'profile'
-import Item from '_utils/item'
-import Avatar from 'avatar'
-import Rating from 'rating'
-import Text, { TextDisplayType } from 'text'
-
-const defaultProps = {
-  title: 'Jack Sparrow',
-}
+import Text, { TextDisplayType } from '~/text'
+import Item from '~/_utils/item'
+import Avatar from '~/avatar'
+import Rating from '~/rating'
+import Profile from './index'
 
 it('Should pass a title prop to Item', () => {
   const profile = shallow(<Profile title="Jack Sparrow" />)
@@ -30,8 +26,12 @@ it('Should display info if no rating is provided', () => {
 })
 
 it('Should display the rating over info if both are provided', () => {
-  const profile = shallow(<Profile title="Jack Sparrow" ratings="2" info="fhtagn" />)
-  expect(profile.find(Item).prop('leftBody')).toEqual(<Rating ratings="2" />)
+  const profile = shallow(<Profile title="Jack Sparrow" ratings={2} info="fhtagn" />)
+  expect(profile.find(Item).prop('leftBody')).toEqual(
+    <Rating score={0} ratings={2}>
+      {''}
+    </Rating>,
+  )
 })
 
 it('Should pass a rightAddon prop to Item', () => {

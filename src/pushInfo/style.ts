@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, fontWeight, radius, space } from '_utils/branding'
+import { color, font, fontWeight, radius, space } from '~/_utils/branding'
 
 export const animationDuration = 700
 export const animationDelay = 300

@@ -1,16 +1,19 @@
 import React from 'react'
-import exenv from 'exenv'
 import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
 
-import Snackbar from 'snackbar'
-import Button from 'button'
+import Button from '~/button'
+import Snackbar from './index'
 
 const close = jest.fn()
 
 describe('Snackbar', () => {
+  beforeEach(jest.resetModules)
+
   it('should not have changed', () => {
-    exenv.canUseDOM = false
+    jest.mock('~/_utils/environment', () => ({ canUseDOM: false }))
+    const Snackbar = require('./index').default
+
     const snackbarServerSide = renderer
       .create(
         <Snackbar isOpen close={close}>
@@ -18,7 +21,6 @@ describe('Snackbar', () => {
         </Snackbar>,
       )
       .toJSON()
-    exenv.canUseDOM = true
     expect(snackbarServerSide).toMatchSnapshot()
   })
 
@@ -38,12 +40,25 @@ describe('Snackbar', () => {
     expect(close).toHaveBeenCalled()
   })
 
-  it('should render the same layout on client and server side', () => {
-    exenv.canUseDOM = false
-    const serverSide = mount(<Snackbar isOpen close={close} />)
-    exenv.canUseDOM = true
-    const clientSide = mount(<Snackbar isOpen close={close} />)
+  describe('Rendering by environment', () => {
+    const modalOutput =
+      // tslint:disable-next-line: max-line-length
+      '<div class="transition-wrapper kirk-snackbar-container"><div class="jsx-190474685 kirk-snackbar slide-up slide-up-entered"><span role="alert" class="kirk-text kirk-text-title kirk-snackbar-content"></span><button class="kirk-button kirk-button-unstyled kirk-snackbar-cross" type="button"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" width="18px" height="18px" aria-hidden="true"><path d="M19 5L5 19M19 19L5 5" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></svg></button></div></div>'
 
-    expect(serverSide.html()).toEqual(clientSide.html())
+    beforeEach(jest.resetModules)
+
+    it('Should render the snackbar server side', () => {
+      jest.mock('~/_utils/environment', () => ({ canUseDOM: false }))
+      const Snackbar = require('./index').default
+      const serverSide = mount(<Snackbar isOpen close={close} />)
+      expect(serverSide.html()).toBe(modalOutput)
+    })
+
+    it('Should render the snackbar client side', () => {
+      jest.mock('~/_utils/environment', () => ({ canUseDOM: true }))
+      const Snackbar = require('./index').default
+      const clientSide = mount(<Snackbar isOpen close={close} />)
+      expect(clientSide.html()).toBe(modalOutput)
+    })
   })
 })

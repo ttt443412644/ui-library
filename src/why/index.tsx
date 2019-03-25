@@ -1,8 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
-import style from 'why/style'
-import QuestionIcon from 'icon/questionIcon'
+import QuestionIcon from '~/icon/questionIcon'
+import style from './style'
 
 interface WhyProps {
   readonly children: string

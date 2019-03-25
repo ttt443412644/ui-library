@@ -1,25 +1,4 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "browsers": ["last 2 versions", "> 1%"],
-          "node": "current"
-        }
-      }
-    ],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "styled-jsx/babel",
-    "@babel/plugin-transform-react-jsx",
-    "@babel/plugin-proposal-class-properties",
-    [
-      "module-resolver",
-      {
-        "root": ["./src", "./build/src"]
-      }
-    ]
-  ]
+  "presets": [["@babel/preset-env", { "modules": false }], "@babel/preset-react"],
+  "plugins": ["styled-jsx/babel"]
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import DropdownButton from 'dropdownButton'
-import ChevronIcon from 'icon/chevronIcon'
+import ChevronIcon from '~/icon/chevronIcon'
+import DropdownButton from './index'
 
 const defaultProps = {
   onClick() {},

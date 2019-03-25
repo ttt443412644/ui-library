@@ -1,5 +1,5 @@
-import * as css from 'styled-jsx/css'
-import { color, font, space, transition, componentSizes, shadow } from '_utils/branding'
+import css from 'styled-jsx/css'
+import { color, font, space, transition, componentSizes, shadow } from '~/_utils/branding'
 
 const borderSize = '2px'
 

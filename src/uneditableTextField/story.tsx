@@ -3,8 +3,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import UneditableTextField from 'uneditableTextField'
-import IconSearch from 'icon/searchIcon'
+import IconSearch from '~/icon/searchIcon'
+import UneditableTextField from './index'
 
 const stories = storiesOf('UneditableTextField', module)
 stories.addDecorator(withKnobs)

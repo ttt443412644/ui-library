@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, transition } from '_utils/branding'
+import { color, transition } from '~/_utils/branding'
 
 export default css`
   .kirk-drawer--open {

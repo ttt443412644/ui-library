@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ButtonGroup from 'buttonGroup'
-import Button from 'button'
+import Button from '~/button'
+import ButtonGroup from './index'
 
 describe('Button Group', () => {
   it('Should apply the row className if the inline prop is set to true', () => {

@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, radius, space, componentSizes } from '_utils/branding'
+import { color, radius, space, componentSizes } from '~/_utils/branding'
 
 export default css`
   li {

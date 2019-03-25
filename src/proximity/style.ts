@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { space } from '_utils/branding'
+import { space } from '~/_utils/branding'
 
 export default css`
   .kirk-proximity {

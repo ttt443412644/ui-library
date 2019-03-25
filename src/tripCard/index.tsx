@@ -2,13 +2,14 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import Avatar from 'avatar'
-import ComfortIcon from 'icon/comfortIcon'
-import LightningIcon from 'icon/lightningIcon'
-import LadyIcon from 'icon/ladyIcon'
-import Itinerary from 'itinerary'
-import Text, { TextDisplayType } from 'text'
-import style from 'tripCard/style'
+import Avatar from '~/avatar'
+import ComfortIcon from '~/icon/comfortIcon'
+import LightningIcon from '~/icon/lightningIcon'
+import LadyIcon from '~/icon/ladyIcon'
+import Itinerary from '~/itinerary'
+import Text, { TextDisplayType } from '~/text'
+
+import style from './style'
 
 export interface TripCardProps {
   href: string | JSX.Element

@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Loader from 'loader'
-import Item, { ItemProps } from '_utils/item/index'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
+import Loader from '~/loader'
+import CircleIcon from '~/icon/circleIcon'
+import CheckIcon from '~/icon/checkIcon'
 
-import { color } from '_utils/branding'
+import Item, { ItemProps } from '~/_utils/item/index'
+import { color } from '~/_utils/branding'
 
-import style from 'toggleButton/style'
+import style from './style'
 
 interface ToggleButtonProps extends ItemProps {
   readonly name: string
@@ -32,6 +32,7 @@ export enum ToggleButtonStatus {
 export default class ToggleButton extends PureComponent<ToggleButtonProps> {
   static defaultProps: Partial<ToggleButtonProps> = {
     status: ToggleButtonStatus.DEFAULT,
+    onChange() {},
     checked: false,
     disabled: false,
   }

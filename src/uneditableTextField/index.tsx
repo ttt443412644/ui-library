@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import style from 'uneditableTextField/style'
+import style from './style'
 
 export interface UneditableTextFieldProps {
   readonly children: JSX.Element | string

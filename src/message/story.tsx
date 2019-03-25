@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
-import Message from 'message'
+import Message from './index'
 
 const stories = storiesOf('Message', module)
 stories.addDecorator(withKnobs)

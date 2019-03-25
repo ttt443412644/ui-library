@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ItemData from 'itemData'
+import ItemData from './index'
 
 const defaultProps = {
   mainInfo: 'Main information',

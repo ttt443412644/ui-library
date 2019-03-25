@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, radius, space, font } from '_utils/branding'
+import { color, radius, space, font } from '~/_utils/branding'
 
 const inputHeight = '54px'
 

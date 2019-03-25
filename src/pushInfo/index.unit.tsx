@@ -2,10 +2,10 @@ import React from 'react'
 import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import { color } from '_utils/branding'
-import ProximityIcon from 'icon/proximityIcon'
-import PushInfo from 'pushInfo'
-import { animationDuration, animationDelay } from 'pushInfo/style'
+import { color } from '~/_utils/branding'
+import ProximityIcon from '~/icon/proximityIcon'
+import PushInfo from './index'
+import { animationDuration, animationDelay } from './style'
 
 jest.useFakeTimers()
 

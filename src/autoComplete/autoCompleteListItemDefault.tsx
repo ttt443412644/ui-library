@@ -1,6 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
-import prefix from '_utils'
+import { prefix } from '~/_utils/helpers'
 
 interface AutoCompleteListItemDefaultProps {
   item: AutocompleteItem

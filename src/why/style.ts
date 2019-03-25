@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font, radius } from '_utils/branding'
+import { color, space, font, radius } from '~/_utils/branding'
 
 export default css`
   .kirk-why {

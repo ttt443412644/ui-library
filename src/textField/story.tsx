@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
 
-import TextField from 'textField'
-import ArrowIcon from 'icon/arrowIcon'
-import Button from 'button'
+import Button from '~/button'
+import ArrowIcon from '~/icon/arrowIcon'
+import TextField from './index'
 
 const stories = storiesOf('TextField', module)
 stories.addDecorator(withKnobs)

@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react'
-import { canUseDOM } from 'exenv'
+import { canUseDOM } from '~/_utils/environment'
 import cc from 'classcat'
-import { isTouchEventsAvailable } from '_utils'
 
-import Button from 'button'
-import PlusIcon from 'icon/plusIcon'
-import MinusIcon from 'icon/minusIcon'
+import { color, delay } from '~/_utils/branding'
+import { isTouchEventsAvailable } from '~/_utils/helpers'
+import Button from '~/button'
+import PlusIcon from '~/icon/plusIcon'
+import MinusIcon from '~/icon/minusIcon'
 
-import { color, delay } from '_utils/branding'
-import style from 'stepper/style'
+import style from './style'
 
 interface StepperProps {
   name: string

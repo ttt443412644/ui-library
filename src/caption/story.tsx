@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import Caption from 'caption'
+import Caption from './index'
 
 const stories = storiesOf('Caption', module)
 stories.addDecorator(withKnobs)

@@ -3,11 +3,11 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import isString from 'lodash.isstring'
 
-import { color } from '_utils/branding'
-import Text, { TextDisplayType, TextTagType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
+import { color } from '~/_utils/branding'
+import Text, { TextDisplayType, TextTagType } from '~/text'
+import ChevronIcon from '~/icon/chevronIcon'
 
-import style from 'itinerary/style'
+import style from '~/itinerary/style'
 
 interface ItineraryProps {
   readonly places: Place[]

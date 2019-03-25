@@ -3,7 +3,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import css from 'styled-jsx/css'
 
-import { color } from '_utils/branding'
+import { color } from '~/_utils/branding'
 
 interface CircleProps extends Icon {
   readonly absolute?: boolean

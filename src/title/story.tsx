@@ -3,9 +3,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select } from '@storybook/addon-knobs'
 
-import Title from 'title'
+import Title from './index'
 
-const stories = storiesOf('Title', module)
 const optionHeading = {
   1: '1',
   2: '2',
@@ -15,8 +14,10 @@ const optionHeading = {
   6: '6',
 }
 
-stories.addDecorator(withKnobs)
-
-stories.add('basic', () => (
-  <Title headingLevel={select('Heading', optionHeading, '1')}>{text('Title', 'Voice title')}</Title>
-))
+storiesOf('Title', module)
+  .addDecorator(withKnobs)
+  .add('basic', () => (
+    <Title headingLevel={select('Heading', optionHeading, '1')}>
+      {text('Title', 'Voice title')}
+    </Title>
+  ))

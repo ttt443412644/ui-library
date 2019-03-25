@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import DayPicker, { DayModifiers, NavbarElementProps, CaptionElementProps } from 'react-day-picker'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import ArrowIcon from 'icon/arrowIcon'
-import Button from 'button'
+import { prefix } from '~/_utils/helpers'
+import { color } from '~/_utils/branding'
+import ArrowIcon from '~/icon/arrowIcon'
+import Button from '~/button'
 
-import style from 'datePicker/style'
+import style from './style'
 
 const [BASE_CLASSNAME] = prefix({ datepicker: true })
 

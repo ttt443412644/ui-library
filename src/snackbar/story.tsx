@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import Snackbar from 'snackbar'
+import Snackbar from './index'
 
 const stories = storiesOf('Snackbar', module)
 stories.addDecorator(withKnobs)

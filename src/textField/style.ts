@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font, radius, transition } from '_utils/branding'
+import { color, space, font, radius, transition } from '~/_utils/branding'
 
 export default css`
   .kirk-textField {

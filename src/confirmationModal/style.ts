@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font } from '_utils/branding'
+import { color, space, font } from '~/_utils/branding'
 
 const footerHeight = '96px' /* = padding + content */
 

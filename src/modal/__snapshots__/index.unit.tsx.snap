@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal should not have changed 1`] = `
+exports[`Modal Rendering by environment should not have changed 1`] = `
 <div
   className="kirk-modal-dimmer kirk-modal-dimmer--visible kirk-modal-dimmer--active"
 >
