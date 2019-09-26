@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** `Tabs` Render all panels to fix scrolling issue when switching tabs
 
 # v11.2.5 (24/09/2019)
 

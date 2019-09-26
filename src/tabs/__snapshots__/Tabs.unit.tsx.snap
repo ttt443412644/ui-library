@@ -104,14 +104,34 @@ exports[`Rendering testing should render properly 1`] = `
     hidden={true}
     id="tab2_panel"
     role="tabpanel"
-  />
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for second tab
+    </div>
+  </div>
   <div
     aria-labelledby="tab3"
     className="kirk-tab-panel"
     hidden={true}
     id="tab3_panel"
     role="tabpanel"
-  />
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for third tab3
+    </div>
+  </div>
 </div>
 `;
 
@@ -269,13 +289,33 @@ exports[`Rendering testing should render properly with icons 1`] = `
     hidden={true}
     id="iconTab2_panel"
     role="tabpanel"
-  />
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for second tab
+    </div>
+  </div>
   <div
     aria-labelledby="iconTab3"
     className="kirk-tab-panel"
     hidden={true}
     id="iconTab3_panel"
     role="tabpanel"
-  />
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for third tab3
+    </div>
+  </div>
 </div>
 `;
