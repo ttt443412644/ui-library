@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Add Bus Ride Details story page
 
 # v20.0.2 (11/02/2020)
 
